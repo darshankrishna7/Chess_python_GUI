@@ -35,9 +35,11 @@ if __name__ == '__main__':
                 if event.button == 1:
                     board.handle_click(mx,my)
         if board.is_in_checkmate('black'):
+            running = False
+            draw(screen)
             show_text("White Won!!")
-            running = False
         elif board.is_in_checkmate('white'):
-            show_text("Black Won!!")
+            draw(screen)
             running = False
+            show_text("Black Won!!")
         draw(screen)
